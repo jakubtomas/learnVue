@@ -1,7 +1,12 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>Parent</h1>
+    <p>{{this.text}}</p>
+    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
+
+  <!-- include component hello world -->
+    <HelloWorld :msg="text" />
+
   </div>
 </template>
 
@@ -11,8 +16,22 @@ import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "Home",
+
+  data: () => ({
+      text: "This is message "
+  }),
+
   components: {
     HelloWorld
   }
 };
 </script>
+
+<style >
+
+.home{
+  background-color : rgb(181, 176, 185);
+  border: 5px solid black;
+}
+
+</style>
