@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Axios from "../views/Axios.vue";
 
 Vue.use(VueRouter);
 
@@ -30,7 +31,18 @@ const routes = [
     name: "Words",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Words.vue")
-  }
+  },
+  {
+    path: "/axios",
+    name: "Axios",
+    component: Axios
+  },
+  {
+    path: "/vuex",
+    name: "Vuex",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Vuex.vue")
+  },
 ];
 
 const router = new VueRouter({

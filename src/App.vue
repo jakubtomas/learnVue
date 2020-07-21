@@ -5,13 +5,14 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/loop">Loop</router-link> |
       <router-link to="/next">Next</router-link> |
-      <router-link to="/words">words</router-link>
+      <router-link to="/words">words</router-link>|
+      <router-link to="/axios">axios</router-link>|
+      <router-link to="/vuex">vuex</router-link>
+      
     </div>
+    
+    <!-- under this place are pages  -->
     <router-view />
-
-  
-
-
   </div>
 </template>
 

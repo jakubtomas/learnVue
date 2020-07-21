@@ -20,11 +20,17 @@
     </div>
 
     <h2>---------------------------------------------------------</h2>
+    <div>
+      <ul>
+        <li v-for="(item, index) in info" :key="index">{{ item }}</li>
+      </ul>
+    </div>
   </div>
 </template>
  
 
 <script>
+import axios from "axios";
 export default {
   data: function() {
     return {
@@ -35,7 +41,12 @@ export default {
       isTrue: false,
       films: [],
       id: "",
-      words: []
+      words: [],
+      info: null,
+      headers: {
+        "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
+        "x-rapidapi-key": "fc019a7f02mshe0e79ccdaf772bap1af5eajsn25aa61df62ef"
+      }
     };
   },
   methods: {
@@ -61,29 +72,25 @@ export default {
         }
       )
         .then(response => response.json())
-        .then(result => console.log(result));
+        .then(results => console.log(results));
     },
 
     /*Create   */
     createAPIwords: function() {
-      this.name = "function createAPIwords run";
+      //axios
+      // .get("https://api.coindesk.com/v1/bpi/currentprice.json")
+      //   .then(response => (this.info = response.data.bpi));
 
-      fetch(
-        "https://mashape-community-urban-dictionary.p.rapidapi.com/define?term="+ this.msg,
-        {
-          method: "GET",
-          headers: {
-            "x-rapidapi-host":
-              "mashape-community-urban-dictionary.p.rapidapi.com",
-            "x-rapidapi-key":
-              "fc019a7f02mshe0e79ccdaf772bap1af5eajsn25aa61df62ef"
-          }
+      const options = {
+        url:"https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=apple",
+        method: "GET",
+        headers: {
+          "x-rapidapi-host":
+            "mashape-community-urban-dictionary.p.rapidapi.com",
+          "x-rapidapi-key": "fc019a7f02mshe0e79ccdaf772bap1af5eajsn25aa61df62ef"
         }
-      )
-        .then(response => response.json())
-        .then(data => console.log(data));
-       // .then(data => 
-        //this.words = data.results); /* push data into array lets go  */
+      };
+      axios(options).then(response => (this.info = response.data));
     }
   },
 
