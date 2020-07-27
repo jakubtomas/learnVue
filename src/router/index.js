@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Axios from "../views/Axios.vue";
+import User from "../views/User.vue";
 
 Vue.use(VueRouter);
 
@@ -43,6 +44,18 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Vuex.vue")
   },
+  {
+    path: "/apicko",
+    name: "Apicko",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Apicko.vue")
+  },
+  {
+    path: "/user/:id",
+    name: "User",
+    component: User
+  },
+  
 ];
 
 const router = new VueRouter({

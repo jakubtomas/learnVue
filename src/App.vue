@@ -7,7 +7,9 @@
       <router-link to="/next">Next</router-link> |
       <router-link to="/words">words</router-link>|
       <router-link to="/axios">axios</router-link>|
-      <router-link to="/vuex">vuex</router-link>
+      <router-link to="/vuex">vuex</router-link> |
+      <router-link to="/apicko">apicko</router-link> |
+      <router-link to="/user">user</router-link> |
       
     </div>
     

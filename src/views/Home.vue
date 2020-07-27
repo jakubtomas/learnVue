@@ -15,15 +15,18 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
+  components:{
+    HelloWorld
+  },
   name: "Home",
 
   data: () => ({
       text: "This is message "
   }),
 
-  components: {
+  /*components: {
     HelloWorld
-  }
+  }*/
 };
 </script>
 

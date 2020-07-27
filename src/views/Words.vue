@@ -1,5 +1,5 @@
 <template>
-  <div id="apps">
+  <div id="demo">
     <h1>{{name}}</h1>
 
     <form>
@@ -22,7 +22,12 @@
     <h2>---------------------------------------------------------</h2>
     <div>
       <ul>
-        <li v-for="(item, index) in info" :key="index">{{ item }}</li>
+        <li v-for="(item,name, index) in info" :key="index">
+          {{ item }} 
+          </li>
+       <!--   
+        <li v-repeat="info" >{{info.list}}</li>
+        -->
       </ul>
     </div>
   </div>
@@ -42,6 +47,7 @@ export default {
       films: [],
       id: "",
       words: [],
+      item: "",
       info: null,
       headers: {
         "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
@@ -82,7 +88,8 @@ export default {
       //   .then(response => (this.info = response.data.bpi));
 
       const options = {
-        url:"https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=apple",
+        url:
+          "https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=apple",
         method: "GET",
         headers: {
           "x-rapidapi-host":
