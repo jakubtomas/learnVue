@@ -22,13 +22,18 @@
     <h2>---------------------------------------------------------</h2>
     <div>
       <ul>
-        <li v-for="(item,name, index) in info" :key="index">
-          {{ item }} 
-          </li>
-       <!--   
+        <li v-for="(item, index) in info" :key="index">{{ item }}</li>
+        <!--   
         <li v-repeat="info" >{{info.list}}</li>
         -->
       </ul>
+
+      <h3>----------------------------------------------</h3>
+      <div>
+        <ul >
+          <li v-repeat="info.list" > {{info.definition}}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -48,7 +53,7 @@ export default {
       id: "",
       words: [],
       item: "",
-      info: null,
+      info: [],
       headers: {
         "x-rapidapi-host": "mashape-community-urban-dictionary.p.rapidapi.com",
         "x-rapidapi-key": "fc019a7f02mshe0e79ccdaf772bap1af5eajsn25aa61df62ef"
@@ -97,15 +102,32 @@ export default {
           "x-rapidapi-key": "fc019a7f02mshe0e79ccdaf772bap1af5eajsn25aa61df62ef"
         }
       };
-      axios(options).then(response => (this.info = response.data));
+      axios(options).then(response => (this.info = response));
     }
   },
 
   created() {
-    fetch("https://swapi.dev/api/films/")
+    fetch("https://swapi.dev/api/films/");
+    //.then(response => response.json())
+    //.then(data => {
+    // this.films = data.results;
+    // });
+
+    fetch(
+      "https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=apple",
+      {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host":
+            "mashape-community-urban-dictionary.p.rapidapi.com",
+          "x-rapidapi-key": "fc019a7f02mshe0e79ccdaf772bap1af5eajsn25aa61df62ef"
+        }
+      }
+    )
       .then(response => response.json())
-      .then(data => {
-        this.films = data.results;
+      //  .then(results => (this.info = results);
+      .then(results => {
+        this.info = results;
       });
   }
 };
