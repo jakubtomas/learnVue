@@ -9,6 +9,7 @@
       <router-link to="/axios">axios</router-link>|
       <router-link to="/vuex">vuex</router-link> |
       <router-link to="/apicko">apicko</router-link> |
+      <router-link to="/localStorage">localStorage</router-link> |
      
       
     </div>

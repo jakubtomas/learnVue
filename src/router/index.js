@@ -55,6 +55,12 @@ const routes = [
     name: "User",
     component: User
   },
+  {
+    path: "/localStorage",
+    name: "LocalStorage",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/localStorage.vue")
+  },
   
 ];
 
