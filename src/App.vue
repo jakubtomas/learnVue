@@ -10,6 +10,7 @@
       <router-link to="/vuex">vuex</router-link> |
       <router-link to="/apicko">apicko</router-link> |
       <router-link to="/localStorage">localStorage</router-link> |
+      <router-link to="/restaurants">restaurants</router-link> |
      
       
     </div>

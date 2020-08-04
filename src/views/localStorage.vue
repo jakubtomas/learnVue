@@ -1,5 +1,7 @@
 <template>
   <div id="demo">
+
+    <div>{{restaurants}}</div>
     <h1>{{name}}</h1>
     <h2>cats</h2>
 
@@ -25,6 +27,7 @@
  
 
 <script>
+import {bus} from '../main';
 //import axios from "axios";
 export default {
   data: function() {
@@ -36,6 +39,7 @@ export default {
       newCat: null,
       title: null,
       contents: null,
+      restaurants: []
       
     };
   },
@@ -77,7 +81,11 @@ export default {
   
   },
 
-  created() {}
+  created() {
+    bus.$on('restaurants', (data) => {
+      this.restaurants = data;
+    })
+  }
 };
 </script>
 

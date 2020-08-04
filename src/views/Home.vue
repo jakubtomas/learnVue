@@ -7,6 +7,8 @@
   <!-- include component hello world -->
     <HelloWorld :msg="text" />
 
+    <h2>hello</h2>
+
   </div>
 </template>
 
