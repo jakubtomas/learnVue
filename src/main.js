@@ -4,8 +4,7 @@ import router from "./router";
 import store from "./store";
 
 Vue.config.productionTip = false;
-
-export const bus = new Vue();
+Vue.prototype.$eventHub = new Vue(); // Global event bus;
 
 new Vue({
   router,

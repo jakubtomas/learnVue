@@ -67,6 +67,12 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Restaurants.vue")
   },
+  {
+    path: "/datetime",
+    name: "Datetime",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Datetime.vue")
+  },
   
 ];
 

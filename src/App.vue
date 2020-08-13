@@ -11,6 +11,7 @@
       <router-link to="/apicko">apicko</router-link> |
       <router-link to="/localStorage">localStorage</router-link> |
       <router-link to="/restaurants">restaurants</router-link> |
+      <router-link to="/datetime">datetime</router-link> |
      
       
     </div>
@@ -19,6 +20,7 @@
     <router-view />
   </div>
 </template>
+
 
 <style lang="scss">
 #app {

@@ -1,45 +1,66 @@
 <template>
   <div class="hello">
-    <h2>Child </h2>
-
+    <h1>{{hello }}</h1>
+    <h2>Children</h2>
+    <p>value of event bus  {{changeName}}</p>
+    <h3>{{ msg }}</h3>
     <h1>{{ msg }}</h1>
 
     <h1>{{fullText}}</h1>
 
-    <p> Text text text  </p>
+    <p>Text text text</p>
 
-    <h4 v-on:click= "changeTitle"> {{title}}</h4>
-    
+   
   </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
-
+  
   props: {
-    msg: {
-      type : String,
-      required: true,
-      // default :"Default value okey "
-    }
+        msg: {
+          type: String,
+          required: true
+          // default :"Default value okey "
+        }
+      },
+
+  data: function() {
+    return {
+      name: "ahoj liska",
+      changeName: '',
+      title: "title value ",
+      hello: "hello value ",
+
+      
+    };
   },
   // data(){
   //   return{
   //     title: "Vue NInjas"
   //   }
   // },
-  computed:{
+  computed: {
     fullText() {
-      return this.msg + "Full text";
+      return this.msg + "Full texteeeeeeeee";
     }
   },
+  created() {
+    /* console.log('function created');
+    this.$root.$on("changeIt", data => {
+      this.header = data;
+    }); */
+    
+  },
+ mounted() {
+    this.$root.$on('changeName', data => (this.changeName = data))
+}
+
   // methods:{
   //   changeTitle: function(){
   //     this.title = " Succesfully changed vue ninjas ";
   //   }
   // }
-
 };
 </script>
 
@@ -59,7 +80,7 @@ li {
 a {
   color: #42b983;
 }
-.hello{
+.hello {
   background-color: rgb(240, 133, 133);
   border: 5px solid red;
 }

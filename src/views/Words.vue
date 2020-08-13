@@ -8,6 +8,8 @@
         <input type="text" v-model="job" />
         <button type="submit">Send Post</button>
       </form>
+
+
     </div>
 
     <h1 class="word">{{name}}</h1>
